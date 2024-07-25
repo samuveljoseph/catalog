@@ -27,32 +27,39 @@ The Catalog Module is a microservice for managing e-commerce catalog data, inclu
    ```bash
    git clone https://github.com/samuveljoseph/catalog.git
 Usage
-API Endpoints
+### API Endpoints
 
-Category Endpoints
+### Category Endpoints
 
-Create Category: POST /api/categories
-Get Category by ID: GET /api/categories/{id}
-Update Category: PUT /api/categories/{id}
-Delete Category: DELETE /api/categories/{id}
+- Create Category: POST /api/categories    
+- Get Category by ID: GET /api/categories/{id}
+- Update Category: PUT /api/categories/{id}
+- Delete Category: DELETE /api/categories/{id}
 
-Brand Endpoints
+### Brand EndPoints
+   
+- Create Brand: Add a new brand to the system: POST /api/brands                             
+- Get Brand by ID: Retrieve a specific brand using its ID: GET /api/brands/{id}
+- Get All Brands: Retrieve a list of all brands: GET /api/brands
+- Update Brand: Modify details of an existing brand: PUT /api/brands/{id}
+- Delete Brand: Remove a brand from the system: DELETE /api/brands/{id}
 
-Create Brand: POST /api/brands
-Get Brand by ID: GET /api/brands/{id}
-Update Brand: PUT /api/brands/{id}
-Delete Brand: DELETE /api/brands/{id}
+### Product APIs
 
-Product Endpoints
+- Create Product: Add a new product to the catalog: POST /api/products
+- Get Product by ID: Retrieve details of a specific product: GET /api/products/{id}
+- Get All Products: Retrieve a list of all products, possibly with pagination and filters (e.g., by category, price range): GET /api/products
+- Update Product: Modify details of an existing product: PUT /api/products/{id}
+- Delete Product: Remove a product from the catalog: DELETE /api/products/{id}
+- Search Products: Allow searching for products by name, description, category, or other attributes: GET /api/products/search
+- Get Products by Brand: Retrieve all products associated with a specific brand.
+- Get Products by Category: Retrieve all products associated with a specific category.
 
-Create Product: POST /api/products
-Get Product by ID: GET /api/products/{id}
-Update Product: PUT /api/products/{id}
-Delete Product: DELETE /api/products/{id}
+### SKU (Stock Keeping Unit) APIs
 
-SKU Endpoints
-
-Create SKU: POST /api/skus
-Get SKU by ID: GET /api/skus/{id}
-Update SKU: PUT /api/skus/{id}
-Delete SKU: DELETE /api/skus/{id}
+- Create SKU: Add a new SKU for a product: POST /api/skus
+- Get SKU by ID: Retrieve details of a specific SKU: GET /api/skus/{id}
+- Get All SKUs for a Product: Retrieve a list of all SKUs associated with a specific product:GET /api/products/{productId}/skus
+- Update SKU: Modify details of an existing SKU (e.g., stock level, price-): PUT /api/skus/{id}
+- Delete SKU: Remove an SKU from the system: DELETE /api/skus/{id}
+- Update Stock Level: Specific endpoint to update the stock level of an SKU: PATCH /api/skus/{id}/stock
